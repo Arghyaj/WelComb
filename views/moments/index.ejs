@@ -1,0 +1,31 @@
+<% include ../partials/header %> 
+
+     <header class="jumbotron" style="background-color: #11BF7E;">
+         <div class="container" style="text-align:center;color: #336cc3;">
+             <h1> Welcome Folks!</h1>
+             <p style="text-align:center;color: #b74b4b;">Share Your Moments over the world</p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-6 col-sm-6" style="margin-bottom:20px;" >
+                <div class="img-thumbnail" id="hoverthumb" style="width:75%;border:0; border-bottom:1px solid #3f8dde; margin-left:12.5%;background-color: #007277;">
+                    
+                <a href="/moments/<%= campground._id %>"></a>
+                   
+                    <a href="/moments/<%= campground._id %>"><img style="height: 300px;" src="<%= campground.image %>"></a>
+                   <div class="caption col-md-6 col-sm-12">
+                       <h4 style="color: #42c8f4;margin-top: 5px;margin-bottom: 0; font-size: 22px;"><%= campground.name %></h4>
+                   </div>
+                   
+                   <div class="caption" style="color: #42c8f4;font-size: 24px;margin-top: 5px;margin-bottom: 0; ">
+                       <h4>Shared By: <%= campground.author.username %></h4>
+                   </div>
+                   
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<% include ../partials/footer %>

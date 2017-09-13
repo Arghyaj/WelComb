@@ -1,0 +1,19 @@
+<% include ./partials/header %> 
+<div class="container" style="text-align: center;width: 50%;">
+<h1>Login!</h1>
+<form action="/login" method="POST">
+    <div class="form-group">
+      <label for="email">Username:</label>
+      <input type="text" class="form-control"  placeholder="Enter username" name="username" >
+    </div>
+
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+<% include ./partials/footer %> 
